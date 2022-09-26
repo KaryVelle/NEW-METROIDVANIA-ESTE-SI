@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HeroController_1 : MonoBehaviour
 {
+    [Header("Attack Variables")]
+    [SerializeField] SwordController_1 swordController;
     [Header("Animation Variables")]                                                             //"Pestaña" con título en el Inspector
     [SerializeField] AnimatorController_1 animatorController;               //Instanciamiento de Clase alias "animatorController"
                                                                             //"SerializeField" significa que desde el inspector podemos  manipular o ver su valor.
@@ -161,6 +163,7 @@ public class HeroController_1 : MonoBehaviour
             animatorController.Play(AnimationId.Attack);  //ejecutamos Clip "Atack"
             playerIsAttacking = true;                     //Prendemos la variable como verdadera (el héroe está atacando)
             StartCoroutine(RestoreAttack());              //Inicia corrutina "RestoreAttack" (reinicia
+            swordController.Attack(0.4f);
         }
 
         IEnumerator RestoreAttack()                         //Corrutina "RestoreAttack"
