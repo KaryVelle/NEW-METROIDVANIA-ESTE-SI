@@ -398,11 +398,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1276065194}
   - component: {fileID: 1276065193}
+  - component: {fileID: 1276065198}
   - component: {fileID: 1276065196}
   - component: {fileID: 1276065192}
   - component: {fileID: 1276065195}
   - component: {fileID: 1276065197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ghost-halo-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -449,7 +450,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a40465af9602b48449aee41068ceacc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -492,7 +493,8 @@ Transform:
   m_LocalPosition: {x: 3.28, y: -2.63, z: 0}
   m_LocalScale: {x: -6.255161, y: 6.0469646, z: 5.7993326}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1849199805}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -525,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 80
-  damageFeedbackEffect: {fileID: 1467145562}
+  damageFeedbackEffect: {fileID: 1276065198}
 --- !u!50 &1276065197
 Rigidbody2D:
   serializedVersion: 4
@@ -547,6 +549,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1276065198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276065191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e7074e1de5a2043ad3f0d16860ff99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431221475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,11 +4504,10 @@ GameObject:
   - component: {fileID: 1467145556}
   - component: {fileID: 1467145555}
   - component: {fileID: 1467145560}
-  - component: {fileID: 1467145562}
   - component: {fileID: 1467145559}
   - component: {fileID: 1467145558}
   - component: {fileID: 1467145561}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4581,7 +4594,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467145554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 6.2662854, y: 6.2662854, z: 6.2662854}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4661,18 +4674,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f1b6a77e9f0f7488766cc051129825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1467145562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467145554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e7074e1de5a2043ad3f0d16860ff99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1705158856
@@ -6260,6 +6261,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cb633a878b7b1640901bcb6016b63a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePoints: 5
+  targetTag: 1
+--- !u!1 &1849199804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849199805}
+  - component: {fileID: 1849199806}
+  m_Layer: 0
+  m_Name: Damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1849199805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849199804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276065194}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849199806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849199804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3687fc7898f7d7640a13bf9408868913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damagePoints: 5
