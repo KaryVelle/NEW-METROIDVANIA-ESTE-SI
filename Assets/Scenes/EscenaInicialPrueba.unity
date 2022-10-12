@@ -4509,7 +4509,7 @@ GameObject:
   - component: {fileID: 1467145561}
   m_Layer: 7
   m_Name: SpriteHolder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4554,7 +4554,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a40465af9602b48449aee41068ceacc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4616,6 +4616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d14c07645033142bfe22a99c65f9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
   swordController: {fileID: 1738278755}
   animatorController: {fileID: 1467145561}
   footA: {fileID: 428629635}
@@ -4627,6 +4628,7 @@ MonoBehaviour:
   speed_: 10
   movementDirection: {x: 0, y: 0}
   jumpForce: 20
+  heroe: {fileID: 1467145554}
 --- !u!50 &1467145559
 Rigidbody2D:
   serializedVersion: 4
@@ -6275,6 +6277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1849199805}
   - component: {fileID: 1849199806}
+  - component: {fileID: 1849199807}
   m_Layer: 0
   m_Name: Damage
   m_TagString: Untagged
@@ -6309,8 +6312,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3687fc7898f7d7640a13bf9408868913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePoints: 5
-  targetTag: 1
+  damagePoints: 1
+  targetTag: 0
+--- !u!70 &1849199807
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849199804}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0031101485, y: 0.3153918}
+  m_Size: {x: 0.30716282, y: 0.56225777}
+  m_Direction: 0
 --- !u!1 &1904684596
 GameObject:
   m_ObjectHideFlags: 0
