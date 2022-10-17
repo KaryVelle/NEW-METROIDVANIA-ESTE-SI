@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e6d14c07645033142bfe22a99c65f9a6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - swordController: {instanceID: 0}
+  - animatorController: {instanceID: 0}
+  - footA: {instanceID: 0}
+  - footB: {instanceID: 0}
+  - attackSfx: {fileID: 8300000, guid: 197d7ef37de94eb409e67d7933af0dc2, type: 3}
+  - heroe: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
