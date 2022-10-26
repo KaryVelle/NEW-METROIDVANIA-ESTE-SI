@@ -12,13 +12,13 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - Player
   - Enemy
   - Enemy2
   - Enemy3
   - Enemy4
-  - 
+  - Ground
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 3984539579
     locked: 0
   - name: BackGround
     uniqueID: 3426437897

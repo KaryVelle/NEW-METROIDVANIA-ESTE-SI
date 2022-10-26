@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HeroController_1 : MonoBehaviour, ITargetCombat_1
 {
@@ -48,11 +49,13 @@ public class HeroController_1 : MonoBehaviour, ITargetCombat_1
     private float alpha = 1;                                //
     public GameObject heroe;
 
-
+    public TMP_Text Contador;                               //variable tipo "TMP_Text" = Contador (salud del Héroe)
+                                                            //El valor de "Contador" esta linkeado al texto del Canvas
+                                                            //y va variando de acuerdo el método "TakeDamage"
 
     void Start()
     {
-
+        Contador.text = "Salud:  " + health;                //Declaramos el valor de "Contador.text"
         canMove = true;                                     //Al iniciar el juego el personaje se mueve "Run" y "Idle"
         rigidbody2D_ = GetComponent<Rigidbody2D>();         //Variable de instanciamiento tipo "RigidBody2D"
         animatorController.Play(AnimationId.Idle);                               //Llamamos a la clase "AnimatorController_1" y le mandamos a su
@@ -193,7 +196,8 @@ public class HeroController_1 : MonoBehaviour, ITargetCombat_1
 
         public void TakeDamage(int damagePoints)
      {
-         health = Mathf.Clamp(health - damagePoints, 0, 10);
+        Contador.text = "Salud:  " + health.ToString();          //Declaramos el valor de "Contador.text"
+        health = Mathf.Clamp(health - damagePoints, 0, 10);
          alpha -= health * Time.deltaTime;                                                        //canal alpha
          Color newColor = new Color(1, 1, 1, alpha);                                             //nuevo color con efecto alpha
          heroe.GetComponent<SpriteRenderer>().color = newColor;                                  //obtenemos el componente SpriteRender y aplicamos nuevo color
